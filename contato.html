@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociais - Junio Stevani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .container {
+            margin-top: 80px; 
+            padding: 20px;
+        }
+
+        .social-media {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .social-media a {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            transition: background-color 0.3s;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-media a:hover {
+            background-color: #ddd;
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .social-media a {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .social-media img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+    <!-- Inclua o Font Awesome para ícones se desejar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>Minhas Redes Sociais</h1>
+    </header>
+
+    <div class="container">
+        <section class="social-media">
+            <!-- <a href="https://facebook.com/seuPerfil" target="_blank" title="Facebook">
+                <img src="confg/facebook.png" alt="ícone Facebook">
+            </a> -->
+            <a href="www.linkedin.com/in/junio-stevani-998aab298" target="_blank" title="LinkedIn">
+                <img src="confg/linkedin.png" alt="ícone LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/junionogueirastevani/" target="_blank" title="Instagram">
+                <img src="confg/instagram.png" alt="ícone Instagram">
+            </a>
+            <a href="https://github.com/JrStevani/" target="_blank" title="GitHub">
+                <img src="confg/github.png" alt="ícone GitHub">
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5514996301079&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp">
+                <img src="confg/whatsapp.png" alt="ícone WhatsApp">
+            </a>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Junio Stevani</p>
+    </footer>
+</body>
+</html>
