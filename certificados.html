@@ -58,6 +58,15 @@
             }
         }
     </style>
+    <script>
+        function ajustarAlturaIframe() {
+            var altura = document.body.scrollHeight;
+            parent.postMessage(altura, '*');
+        }
+
+        window.addEventListener('load', ajustarAlturaIframe);
+        window.addEventListener('resize', ajustarAlturaIframe);
+    </script>
 </head>
 <body>
     <main>

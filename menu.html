@@ -171,7 +171,7 @@
                 font-size: 1em;
             }
         }
-    </style>
+    </style> 
 </head>
 <body>
 
@@ -194,9 +194,10 @@
             <a href="index.html">Voltar</a>
         </nav>
         <section id="projetos">
-            <iframe src="iframe-principal.html" name="meuIframe" scrolling="auto" frameborder="0">
+            <iframe src="iframe-principal.html" name="meuIframe" id="meuIframe" scrolling="no" frameborder="0">
                 Seu navegador não suporta iframes.
             </iframe>
+            
         </section>
     </main>
     
@@ -221,6 +222,13 @@
                 nav.classList.add('nav-hidden');
             });
         });
+        function ajustarAlturaIframe() {
+            const iframe = document.getElementById('meuIframe');
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }
+    
+        const iframe = document.getElementById('meuIframe');
+        iframe.addEventListener('load', ajustarAlturaIframe);
     </script>
 
 </body>
