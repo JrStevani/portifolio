@@ -215,6 +215,43 @@
                     <li><strong>Bibliotecas de estatística</strong>: Ferramentas para cálculos estatísticos como variância e desvio padrão.</li>
                 </ul>
             </div>
+
+            <div id="web-scraping-medicamentos" class="project">
+                <h1>Web Scraping para Medicamentos</h1>
+                <p><a href="https://jrstevani.github.io/Web_Scraping_Para_Medicamentos/" target="_blank"><strong>Projeto detalhado</strong></a></p>
+                <h2>Descrição do Projeto e Funcionalidades</h2>
+                <p>Este projeto visa capturar e analisar dados de medicamentos a partir dos sites "Consulta Remédios" e "Farmaindex" utilizando Python. Através de uma combinação de web scraping com as bibliotecas <code>BeautifulSoup</code> e requisições HTTP com a biblioteca <code>requests</code>, os scripts buscam informações planejadas sobre medicamentos com base em seus códigos EAN presentes em um arquivo Excel.</p>
+
+                <h2>Funcionalidades do Projeto:</h2>
+                <ul>
+                    <li><strong>Leitura de Dados:</strong> Os scripts lêem os códigos EAN de medicamentos de uma planilha em um arquivo Excel.</li>
+                    <li><strong>Web Scraping:</strong> Utilize a biblioteca <code>BeautifulSoup</code> para extrair dados específicos dos sites "Consulta Remédios" e "Farmaindex" como apresentação, nome do medicamento, princípio ativo e fabricante.</li>
+                    <li><strong>Tratamento de Dados:</strong> Os dados extraídos são organizados em um DataFrame do Pandas para fácil manipulação e análise.</li>
+                    <li><strong>Exportação de Dados:</strong> Os resultados são salvos em novas planilhas Excel, permitindo uma análise estruturada e comparativa dos dados.</li>
+                </ul>
+
+                <h2>Etapas do Processo:</h2>
+                <ul>
+                    <li><strong>Requisição HTTP:</strong> Realiza uma solicitação GET para a URL do medicamento com base no código EAN.</li>
+                    <li><strong>Análise HTML:</strong> Utilize <code>BeautifulSoup</code> para analisar o conteúdo HTML e encontrar as divs específicas que contêm os dados necessários.</li>
+                    <li><strong>Extração de Dados:</strong> Decodifica o JSON contido nos atributos HTML (no caso do "Consulta Remédios") ou extrai diretamente os textos das tags HTML (no caso do "Farmaindex") para obter informações desenvolvidas sobre cada medicamento.</li>
+                    <li><strong>Organização dos Dados:</strong> Estrutura dos dados extraídos em um DataFrame do Pandas e concatena com os dados originais.</li>
+                    <li><strong>Exportação:</strong> Salva o DataFrame resultante em um novo arquivo Excel para cada conjunto de códigos EAN processados.</li>
+                </ul>
+                <h2>Scripts Utilizados:</h2>
+                <ul>
+                    <li><strong>Web_Scraping_Site_principal.py:</strong> Focado na captura de dados do site "Consulta Remédios".</li>
+                    <li><strong>Web_scraping_site_Secundario.py:</strong> Complementa a captura de dados para medicamentos cuja obtenção não foi obtida do site principal, buscando informações no site "Farmaindex".</li>
+                </ul>
+
+                <h2>Este projeto demonstra a utilização de:</h2>
+                <ul>
+                    <li>Web scraping e análise de dados com Python.</li>
+                    <li>Manipulação e processamento de dados com Pandas.</li>
+                    <li>Interação e integração de dados entre diferentes fontes e formatos.</li>
+                </ul>
+                <p>O código fornece uma solução automatizada e eficiente para a coleta e análise de informações de medicamentos, potencializando a capacidade de fornecimento de dados precisos e atualizados para diferentes aplicações na área da saúde e farmacêutica.</p>
+            </div>
         
             <div id="web-development" class="project">
                 <h1>Bula Fácil</h1>
@@ -239,6 +276,7 @@
                     <li><strong>API:</strong> Empregada para solicitação e fornecimento das bulas de medicamentos.</li>
                 </ul>
             </div>
+
         </section>
     </main>
 </body>
