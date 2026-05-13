@@ -1,138 +1,471 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiências Profissionais - Portfólio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
+  <title>Experiências | Junio Stevani</title>
 
-        header {
-            background-color: #1c1c1c;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+  <style>
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-        .section {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-        }
+    :root{
+      --primary:#3b82f6;
+      --bg:#0f172a;
+      --card:#1e293b;
+      --text:#ffffff;
+      --text-secondary:#cbd5e1;
+      --border:rgba(255,255,255,0.08);
+    }
 
-        .section h2 {
-            margin-top: 0;
-            color: #1a1f24;
-        }
+    body{
+      font-family:Arial,sans-serif;
+      background:transparent;
+      color:var(--text);
+      padding:40px;
+    }
 
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
+    ::-webkit-scrollbar{
+      display:none;
+    }
 
-        .section ul li {
-            margin-bottom: 10px;
-            padding-left: 1em;
-            position: relative;
-        }
+    .title{
+      margin-bottom:50px;
+    }
 
-        .section ul li:before {
-            content: "•";
-            color: #181b1d;
-            position: absolute;
-            left: 0;
-            font-size: 1.5em;
-            line-height: 1;
-        }
-        ::-webkit-scrollbar {
-            display: none; 
-        }
+    .title span{
+      color:var(--primary);
+      font-weight:bold;
+      letter-spacing:2px;
+      font-size:0.9rem;
+    }
 
+    .title h1{
+      margin-top:10px;
+      font-size:2.7rem;
+    }
 
-        .section p {
-            line-height: 1.6;
-        }
+    .timeline{
+      position:relative;
+      margin-left:20px;
+      border-left:2px solid rgba(59,130,246,0.25);
+      padding-left:35px;
+    }
 
-        .contact {
-            text-align: center;
-            margin-top: 30px;
-        }
+    .experience{
+      position:relative;
 
-        .contact a {
-            text-decoration: none;
-            color: #181b1d;
-            font-weight: bold;
-            border-bottom: 2px solid #252a2e;
-            padding: 5px;
-            transition: color 0.3s, border-color 0.3s;
-        }
+      background:rgba(30,41,59,0.75);
+      backdrop-filter:blur(12px);
 
-        .contact a:hover {
-            color: #1c1c1c;
-            border-bottom: 2px solid #1c1c1c;
-        }
-    </style>
-    <script>
-        function ajustarAlturaIframe() {
-            const altura = document.body.scrollHeight;
-            window.parent.postMessage(altura, '*'); 
-        }
+      border:1px solid var(--border);
 
-        window.addEventListener('load', ajustarAlturaIframe);
-        window.addEventListener('resize', ajustarAlturaIframe);
-    </script>
+      border-radius:22px;
+
+      padding:30px;
+      margin-bottom:35px;
+
+      transition:0.3s ease;
+    }
+
+    .experience:hover{
+      transform:translateY(-6px);
+
+      border-color:rgba(59,130,246,0.45);
+
+      box-shadow:
+      0 10px 30px rgba(59,130,246,0.15);
+    }
+
+    .experience::before{
+      content:'';
+
+      position:absolute;
+
+      left:-48px;
+      top:35px;
+
+      width:16px;
+      height:16px;
+
+      border-radius:50%;
+
+      background:var(--primary);
+
+      box-shadow:
+      0 0 18px rgba(59,130,246,0.7);
+    }
+
+    .tag{
+      display:inline-block;
+
+      padding:8px 14px;
+
+      border-radius:999px;
+
+      background:rgba(59,130,246,0.15);
+
+      color:#93c5fd;
+
+      font-size:0.85rem;
+
+      margin-bottom:18px;
+    }
+
+    .experience h2{
+      font-size:1.7rem;
+      margin-bottom:10px;
+    }
+
+    .empresa{
+      color:var(--text-secondary);
+      margin-bottom:20px;
+      font-size:1rem;
+    }
+
+    .descricao{
+      color:var(--text-secondary);
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .lista{
+      margin-top:15px;
+      padding-left:20px;
+    }
+
+    .lista li{
+      margin-bottom:12px;
+      color:var(--text-secondary);
+      line-height:1.7;
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .skill{
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid var(--border);
+
+      padding:8px 14px;
+
+      border-radius:999px;
+
+      font-size:0.9rem;
+
+      color:#dbeafe;
+    }
+
+    .contact{
+      margin-top:50px;
+
+      text-align:center;
+
+      background:rgba(30,41,59,0.7);
+
+      border:1px solid var(--border);
+
+      border-radius:22px;
+
+      padding:40px;
+    }
+
+    .contact h3{
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    .contact p{
+      color:var(--text-secondary);
+      margin-bottom:25px;
+      line-height:1.7;
+    }
+
+    .contact a{
+      display:inline-block;
+
+      padding:14px 28px;
+
+      border-radius:14px;
+
+      text-decoration:none;
+
+      background:var(--primary);
+
+      color:white;
+
+      font-weight:bold;
+
+      transition:0.3s ease;
+    }
+
+    .contact a:hover{
+      transform:translateY(-4px);
+
+      box-shadow:
+      0 10px 20px rgba(59,130,246,0.3);
+    }
+
+    @media(max-width:768px){
+
+      body{
+        padding:20px;
+      }
+
+      .title h1{
+        font-size:2rem;
+      }
+
+      .timeline{
+        margin-left:10px;
+        padding-left:25px;
+      }
+
+      .experience::before{
+        left:-38px;
+      }
+
+      .experience{
+        padding:25px;
+      }
+
+      .contact{
+        padding:30px 20px;
+      }
+
+    }
+
+  </style>
+
+  <script>
+
+    function ajustarAlturaIframe(){
+
+      const altura = document.body.scrollHeight;
+      window.parent.postMessage(altura, '*');
+
+    }
+
+    window.addEventListener('load', ajustarAlturaIframe);
+    window.addEventListener('resize', ajustarAlturaIframe);
+
+  </script>
+
 </head>
+
 <body>
-    <header>
-        <h1>Experiências Profissionais</h1>
-    </header>
 
-    <div class="container">
-        <section class="section">
-            <h2>Projetos Freelancer</h2>
-            <ul>
-                <li><strong>Desenvolvimento de Websites e Aplicações Web:</strong> Trabalhei em diversos projetos de criação e manutenção de sites para clientes de várias indústrias, incluindo design e desenvolvimento de front-end e funcionalidades dinâmicas usando JavaScript e frameworks como React e Vue.js.</li>
-                <li><strong>Automação de Tarefas com Web Scraping:</strong> Desenvolvi scripts para coleta e análise de dados da web com Python, utilizando bibliotecas como BeautifulSoup e Scrapy para automatizar a extração e processamento de dados.</li>
-            </ul>
-        </section>
+  <div class="title">
 
-        <section class="section">
-            <h2>Projetos de Análise de Dados</h2>
-            <p><strong>Projeto PMPF (Preço Medio Ponderado Final):</strong> Desenvolvi um projeto de análise de dados envolvendo coleta, limpeza e visualização de dados para fornecer insights sobre a performance de fatores em conjuntos de dados complexos.</p>
-        </section>
+    <span>CARREIRA PROFISSIONAL</span>
 
-        <section class="section">
-            <h2>Outros Projetos e Realizações</h2>
-            <ul>
-                <li><strong>Automatização de Processos:</strong> Realizei projetos para automação de tarefas administrativas e integração de sistemas, melhorando a eficiência e reduzindo erros através de scripts personalizados.</li>
-                <li><strong>Consultoria e Suporte Técnico:</strong> Ofereci consultoria e suporte técnico a pequenos negócios e empreendedores para resolver problemas e otimizar operações digitais.</li>
-            </ul>
-        </section>
+    <h1>Experiências</h1>
 
-        <div class="contact">
-            <p>Deseja saber mais sobre meus projetos ou discutir como posso contribuir para suas necessidades tecnológicas?</p>
-            <a href="contato.html" target="meuIframe">Entre em contato</a>
-        </div>
+  </div>
+
+  <div class="timeline">
+
+    <!-- EXPERIÊNCIA -->
+
+    <div class="experience">
+
+      <div class="tag">
+        Atual
+      </div>
+
+      <h2>
+        Analista de Suporte
+      </h2>
+
+      <p class="empresa">
+        MdNet • Tecnologia e Suporte
+      </p>
+
+      <p class="descricao">
+        Atuação com suporte técnico, análise de problemas,
+        manutenção de sistemas e otimização de processos tecnológicos.
+      </p>
+
+      <ul class="lista">
+
+        <li>
+          Atendimento e suporte técnico aos usuários.
+        </li>
+
+        <li>
+          Diagnóstico e resolução de problemas em sistemas.
+        </li>
+
+        <li>
+          Automação de tarefas e processos internos.
+        </li>
+
+        <li>
+          Apoio em infraestrutura e banco de dados.
+        </li>
+
+      </ul>
+
+      <div class="skills">
+
+        <div class="skill">Suporte Técnico</div>
+
+        <div class="skill">Python</div>
+
+        <div class="skill">Automação</div>
+
+        <div class="skill">Infraestrutura</div>
+
+        <div class="skill">Banco de Dados</div>
+
+      </div>
+
     </div>
+
+    <!-- EXPERIÊNCIA -->
+
+    <div class="experience">
+
+      <div class="tag">
+        Freelancer
+      </div>
+
+      <h2>
+        Desenvolvedor Web
+      </h2>
+
+      <p class="empresa">
+        Projetos Independentes
+      </p>
+
+      <p class="descricao">
+        Desenvolvimento de aplicações web modernas,
+        sistemas personalizados e soluções digitais.
+      </p>
+
+      <ul class="lista">
+
+        <li>
+          Criação de websites responsivos.
+        </li>
+
+        <li>
+          Desenvolvimento front-end moderno.
+        </li>
+
+        <li>
+          Integração com APIs e bancos de dados.
+        </li>
+
+        <li>
+          Desenvolvimento de dashboards e sistemas administrativos.
+        </li>
+
+      </ul>
+
+      <div class="skills">
+
+        <div class="skill">HTML5</div>
+
+        <div class="skill">CSS3</div>
+
+        <div class="skill">JavaScript</div>
+
+        <div class="skill">PHP</div>
+
+        <div class="skill">MySQL</div>
+
+      </div>
+
+    </div>
+
+    <!-- EXPERIÊNCIA -->
+
+    <div class="experience">
+
+      <div class="tag">
+        Dados & Automação
+      </div>
+
+      <h2>
+        Desenvolvedor de Automação
+      </h2>
+
+      <p class="empresa">
+        Projetos de Processamento de Dados
+      </p>
+
+      <p class="descricao">
+        Criação de soluções automatizadas para coleta,
+        padronização e análise de grandes volumes de dados.
+      </p>
+
+      <ul class="lista">
+
+        <li>
+          Desenvolvimento de sistemas de Web Scraping.
+        </li>
+
+        <li>
+          Tratamento e análise de dados com Python.
+        </li>
+
+        <li>
+          Criação de relatórios automatizados.
+        </li>
+
+        <li>
+          Integração de dados e processos ETL.
+        </li>
+
+      </ul>
+
+      <div class="skills">
+
+        <div class="skill">Python</div>
+
+        <div class="skill">Pandas</div>
+
+        <div class="skill">NumPy</div>
+
+        <div class="skill">Openpyxl</div>
+
+        <div class="skill">Web Scraping</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTATO -->
+
+  <div class="contact">
+
+    <h3>
+      Vamos conversar?
+    </h3>
+
+    <p>
+      Estou disponível para novos projetos,
+      oportunidades profissionais e colaborações.
+    </p>
+
+    <a href="contato.html" target="meuIframe">
+      Entrar em contato
+    </a>
+
+  </div>
+
 </body>
 </html>
